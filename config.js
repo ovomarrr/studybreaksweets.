@@ -25,17 +25,17 @@ const SITE_CONFIG = {
   products: [
     {
       id: "choc-chip",
-      name: "Chocolate Chip",
-      description: "Classic soft-baked cookie packed with melty chocolate chips.",
+      name: "nutella",
+      description: "sold out in lbss n edison.",
       price: 3.00,
       availability: "Available",
       emoji: "🍪",
       featured: true
     },
     {
-      id: "cookies-cream",
-      name: "Cookies & Cream",
-      description: "A soft vanilla cookie loaded with crushed chocolate sandwich cookies.",
+      id: "cookie",
+      name: "fruity pebble cookie",
+      description: "cookie with fruity pebbles.",
       price: 3.00,
       availability: "Available",
       emoji: "🤍",
@@ -43,8 +43,8 @@ const SITE_CONFIG = {
     },
     {
       id: "brown-butter",
-      name: "Brown Butter Chocolate Chip",
-      description: "Rich, nutty brown butter dough with plenty of chocolate chips.",
+      name: "unavailable",
+      description: "blank.",
       price: 3.50,
       availability: "Available",
       emoji: "🍫",
@@ -52,7 +52,7 @@ const SITE_CONFIG = {
     },
     {
       id: "ctc",
-      name: "Cinnamon Toast Crunch",
+      name: "Coming soon",
       description: "Warm cinnamon-sugar cookie with a crunchy cereal finish.",
       price: 3.00,
       availability: "Sample / editable",
@@ -61,8 +61,8 @@ const SITE_CONFIG = {
     },
     {
       id: "red-velvet",
-      name: "Red Velvet",
-      description: "Soft red velvet cookie with a rich chocolate flavor.",
+      name: "coming soon",
+      description: "coming soon.",
       price: 3.25,
       availability: "Sample / editable",
       emoji: "❤️",
