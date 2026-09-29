@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Baked by Piper — fresh-baked cookies made for your school day.">
+  <title>Baked by Piper | Fresh-Baked Cookies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">Fresh-baked cookies for your next school day ✦</div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Baked by Piper home">
+      <span class="brand-mark">🍪</span>
+      <span>Baked by Piper</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#order">Order</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-order" href="#order">Order Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">student-run • school-day treats</span>
+        <h1>Cookies worth<br><em>looking forward to.</em></h1>
+        <p>Fresh-baked cookies, made for your school day.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">Order Now</a>
+          <a class="btn btn-secondary" href="#menu">View Menu</a>
+        </div>
+        <div class="mini-note"><span>✦</span> Serving Woodbridge HS, LBSS & Edison HS</div>
+      </div>
+      <div class="hero-art reveal" aria-label="Decorative cookie illustration">
+        <div class="blob"></div>
+        <div class="cookie cookie-large"><span>•</span><span>•</span><span>•</span><span>•</span><span>•</span><span>•</span></div>
+        <div class="cookie cookie-small"><span>•</span><span>•</span><span>•</span></div>
+        <div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <div><strong>Made fresh</strong><span>for your school day</span></div>
+      <div><strong>Easy ordering</strong><span>choose your school + pickup</span></div>
+      <div><strong>Student-run</strong><span>small business, big cookie energy</span></div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="section-heading reveal">
+        <span class="eyebrow">the menu</span>
+        <h2>Pick your favorite.</h2>
+        <p>The weekly menu is updated in one place, so cookie names and prices can change week by week.</p>
+      </div>
+      <div id="featured-grid" class="product-grid"></div>
+      <div class="center"><a class="text-link" href="#menu-all">See the full menu ↓</a></div>
+    </section>
+
+    <section id="menu-all" class="section section-tint">
+      <div class="section-heading">
+        <span class="eyebrow">full menu</span>
+        <h2>Everything sweet.</h2>
+      </div>
+      <div id="menu-grid" class="product-grid"></div>
+    </section>
+
+    <section class="schools section">
+      <div class="schools-card reveal">
+        <div>
+          <span class="eyebrow">where we deliver / meet</span>
+          <h2>Your school, your cookies.</h2>
+          <p>Choose your school when you place an order so your pickup details can be matched correctly.</p>
+        </div>
+        <div id="school-pills" class="school-pills"></div>
+      </div>
+    </section>
+
+    <section id="order" class="section order-section">
+      <div class="section-heading reveal">
+        <span class="eyebrow">order online</span>
+        <h2>Build your cookie order.</h2>
+        <p>Add as many products as you want, then choose your school and pickup details.</p>
+      </div>
+
+      <div class="order-layout">
+        <form id="order-form" class="order-form">
+          <div class="form-section">
+            <h3>1. Your details</h3>
+            <label>Name <span>*</span><input id="customer-name" required autocomplete="name" placeholder="Your name"></label>
+            <label>School <span>*</span>
+              <select id="school" required><option value="">Choose your school</option></select>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <h3>2. Pickup</h3>
+            <div class="two-col">
+              <label>Pickup date <span>*</span><input id="pickup-date" type="date" required></label>
+              <label>Pickup time <span>*</span><input id="pickup-time" type="time" required></label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-title-row"><h3>3. Cookies</h3><span class="muted">add multiple</span></div>
+            <div id="order-products"></div>
+          </div>
+
+          <div class="form-section">
+            <h3>4. Anything else?</h3>
+            <label>Notes / Special Instructions<textarea id="notes" rows="4" placeholder="Optional"></textarea></label>
+          </div>
+
+          <button class="btn btn-primary full" type="submit">Place Order <span>→</span></button>
+          <p class="form-disclaimer" id="order-disclaimer"></p>
+        </form>
+
+        <aside class="cart-card" aria-live="polite">
+          <div class="cart-top"><h3>Your order</h3><span id="cart-count">0 items</span></div>
+          <div id="cart-items" class="cart-items">
+            <div class="empty-cart"><div>🍪</div><strong>Your cart is empty</strong><span>Add a cookie to get started.</span></div>
+          </div>
+          <div class="cart-summary">
+            <div><span>Total quantity</span><strong id="cart-qty">0</strong></div>
+            <div class="grand-total"><span>Total</span><strong id="cart-total">$0.00</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="about-art"><div class="about-cookie">🍪</div></div>
+      <div class="about-copy">
+        <span class="eyebrow">our story</span>
+        <h2>Small business.<br>Big cookie plans.</h2>
+        <p>Baked by Piper is a student-run cookie business made for students who want an easy, affordable treat during the school day.</p>
+        <p>We serve Woodbridge High School, Lake Braddock Secondary School (LBSS), and Edison High School. Everything is designed to be simple: pick your cookies, choose your school, and place your order.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-tint">
+      <div class="section-heading"><span class="eyebrow">questions?</span><h2>Good to know.</h2></div>
+      <div class="faq">
+        <details><summary>Where do you sell?</summary><p>We currently serve Woodbridge High School, Lake Braddock Secondary School (LBSS), and Edison High School.</p></details>
+        <details><summary>How do I order?</summary><p>Use the Order page, choose your school and pickup details, add your cookies, and submit the form.</p></details>
+        <details><summary>When can I pick up my order?</summary><p>Choose an available date and time in the order form. Edit your actual pickup schedule in your business information before publishing.</p></details>
+        <details><summary>How much do cookies cost?</summary><p>Prices shown on the menu are sample prices. You can update every price in <code>config.js</code>.</p></details>
+        <details><summary>Can I order multiple cookies?</summary><p>Yes! Use the + and − controls next to each cookie to build one order with multiple products.</p></details>
+        <details><summary>How far in advance should I order?</summary><p>Set your own ordering deadline based on your baking and school schedule. This answer is editable.</p></details>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-card">
+        <div>
+          <span class="eyebrow">say hi</span>
+          <h2>Let's talk cookies.</h2>
+          <p>Questions, custom requests, or just want to say hi? Questions, custom requests, or just want to say hi? Reach out through Instagram or email.</p>
+          <div class="contact-links">
+            <a id="instagram-link" href="#" target="_blank" rel="noopener">Instagram · <span></span></a>
+            <a id="email-link" href="#"><span></span></a>
+          </div>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <label>Name<input required placeholder="Your name"></label>
+          <label>Email<input type="email" required placeholder="you@email.com"></label>
+          <label>Message<textarea rows="5" required placeholder="What can we help with?"></textarea></label>
+          <button class="btn btn-dark" type="submit">Send message</button>
+          <p id="contact-status" class="success-message" hidden>Message form ready — connect it to your preferred form service before publishing.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section connect-section">
+      <div class="connect-card">
+        <span class="eyebrow">orders + payment</span>
+        <h2>Everything in one place.</h2>
+        <p>Orders can be sent to the Cookies by Piper Google Sheet, while customers are directed to Cash App to complete payment. The weekly menu stays easy to update without changing the site's layout.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="confirmation" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="confirm-icon">🍪</div>
+      <span class="eyebrow">order received</span>
+      <h2 id="confirm-title">Thank you!</h2>
+      <p id="confirmation-message">Your order has been received.</p>
+      <div id="confirmation-details" class="confirmation-details"></div>
+      <div id="payment-area" class="payment-area" hidden>
+        <p class="payment-note"><strong>One last step:</strong> complete your payment through Cash App.</p>
+        <a id="cashapp-button" class="btn btn-primary full" href="#" target="_blank" rel="noopener">Pay with Cash App <span>→</span></a>
+        <p id="payment-unavailable" class="form-disclaimer" hidden>Add Piper's Cash App link in <code>config.js</code> to activate the payment button.</p>
+      </div>
+      <button class="btn btn-secondary full modal-done">Have a good day! 🍪</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">🍪 Baked by Piper</div>
+    <p>Student-run cookie business · Woodbridge HS · LBSS · Edison HS</p>
+    <span>© <span id="year"></span> Baked by Piper</span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
